@@ -14,11 +14,11 @@ class Date{
 		}
 
 		void operator++(int delta){
-			//this->day+=1;
+			this->day+=1;
 		}
 
 		void operator--(int delta){
-			//this->day-=1;
+			this->day-=1;
 		}
 };
 
