@@ -17,13 +17,13 @@ class DynamicArray{
         {
            int* array = new int[index]; 
         }
-        this.array[index] = value;
+        this->array[index] = value;
     }
     
     DynamicArray(int indexArg)
     {
-       index= indexArg;
-       int* array = new int[index];
+       this->index= indexArg;
+       int* array = new int[indexArg];
        
     }
     
@@ -33,8 +33,10 @@ friend std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg
 };
 
 std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg){
-            for (i = 0, i<index, i++)
-            os<<numbersArg.array[index]<<", ";
+            for (int i = 0; i<numbersArg.index; i++)
+            {
+            os<<numbersArg.array[numbersArg.index]<<", ";
+            }
     return os;
 }
 
