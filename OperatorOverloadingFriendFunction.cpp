@@ -19,20 +19,20 @@ class BankCustomer{
         this->panNumber="";
         this->emailId="";
         this->phoneNumber="";
-        cout<<"BankCustomer()"<<endl;
+        //cout<<"BankCustomer()"<<endl;
     }
     //Compile Time Polymorphism , constructor Overloading
     BankCustomer(string nameArg,string adharNumberArg,string panNumberArg):BankCustomer(){
         this->name=nameArg;
         this->adharNumber=adharNumberArg;
         this->panNumber=panNumberArg;
-         cout<<"BankCustomer(string nameArg,string adharNumberArg,string panNumberArg)"<<endl;
+        //cout<<"BankCustomer(string nameArg,string adharNumberArg,string panNumberArg)"<<endl;
        
     }
        BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg,string phoneArg):BankCustomer(nameArg, adharNumberArg, panNumberArg){
         this->emailId=emailArg;
         this->phoneNumber=phoneArg;
-        cout<<"BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg,string phoneArg)"<<endl;
+        //cout<<"BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg,string phoneArg)"<<endl;
         
     }
  
