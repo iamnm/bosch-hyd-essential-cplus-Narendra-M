@@ -16,6 +16,10 @@ class Date{
 		void operator++(){
 			//this->day+=1;
 		}
+
+		void operator--(){
+			//this->day-=1;
+		}
 };
 
 int main(){
