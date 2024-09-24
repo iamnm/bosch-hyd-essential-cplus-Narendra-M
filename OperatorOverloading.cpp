@@ -17,7 +17,7 @@ class Date{
 			//this->day+=1;
 		}
 
-		void operator--(){
+		void operator--(int delta){
 			//this->day-=1;
 		}
 };
