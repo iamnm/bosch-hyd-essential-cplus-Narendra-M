@@ -42,8 +42,8 @@ class BankCustomer{
             cout<<"Name          :   "<<this->name<<endl;
             cout<<"Adhar Number  :"<<this->adharNumber<<endl;
             cout<<"PAN Number    :"<<this->panNumber<<endl;
-            cout<<"Email Id ::"<<this->emailId<<endl;
-            cout<<"Phone Number ::"<<this->phoneNumber<<endl;
+            cout<<"Email Id      : "<<this->emailId<<endl;
+            cout<<"Phone Number  :"<<this->phoneNumber<<endl;
             
             
     }
@@ -53,7 +53,7 @@ class BankCustomer{
 int main() {
     // Write C++ code here
     //std::cout << "Try programiz.pro";
-    BankCustomer objBankCustomer("Narendra M", "123456", "9898552233", "email@gmail.com", "044-2532156");
+    BankCustomer objBankCustomer("Narendra M", "123456", "ABCD551122", "email@gmail.com", "044-2532156");
     objBankCustomer.printCustomerInfo();
     return 0;
 }
