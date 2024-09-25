@@ -6,31 +6,30 @@ using namespace std;
 
 class DynamicArray{
     private:
-    int count=0;
-    int* array = new int[0];
+        int count=0;
+        int* array;
     
     public:
-    
-    void add(int value){
-        this->array[this->count] = value;
-        this->count++;
-    }
-    
-    DynamicArray(int indexArg)
-    {
-       int* array = new int[indexArg];
-       
-    }
-    
-    const int& operator[](int index) const {
-          return this->array[index];
-    }
+
+        DynamicArray(int indexArg){
+           array = new int[indexArg];
+        }
+
      
+        ~DynamicArray(){
+           delete[] this->array; 
+        }
+    
+        void add(int value){
+            this->array[this->count] = value;
+            this->count++;
+        }
+    
+        
+        const int& operator[](int index) const {
+              return this->array[index];
+        }
      
-    ~DynamicArray()
-    {
-       delete[] this->array; 
-    }
     
 friend std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg);
     
