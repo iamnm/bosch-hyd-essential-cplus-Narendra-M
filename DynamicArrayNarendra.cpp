@@ -45,7 +45,7 @@ std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg){
 
 
 int main(){
-    DynamicArray numbers(2);
+    DynamicArray numbers(5);
     numbers.add(10);
     numbers.add(20);
     numbers.add(30);
