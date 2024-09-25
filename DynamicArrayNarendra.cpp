@@ -23,6 +23,9 @@ class DynamicArray{
        
     }
     
+    const int& operator[](int index) const {
+          return this->array[index];
+    }
      
 friend std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg);
     
@@ -43,8 +46,8 @@ int main(){
     numbers.add(20);
     numbers.add(30);
     cout<<numbers<<endl; // 10,20,30
-    //int value=numbers[1];
-    //cout<<value<<endl; //20
+    int value=numbers[1];
+    cout<<value<<endl; //20
    return 0;
   
 };
