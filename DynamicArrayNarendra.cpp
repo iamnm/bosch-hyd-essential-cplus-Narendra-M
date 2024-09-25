@@ -6,7 +6,7 @@ using namespace std;
 
 class DynamicArray{
     private:
-    int index=0, count=0;
+    int count=0;
     int* array = new int[0];
     
     public:
@@ -18,7 +18,6 @@ class DynamicArray{
     
     DynamicArray(int indexArg)
     {
-       this->index= indexArg;
        int* array = new int[indexArg];
        
     }
@@ -32,7 +31,7 @@ friend std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg
 };
 
 std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg){
-            for (int i = 0; i<=numbersArg.index; i++)
+            for (int i = 0; i<numbersArg.count; i++)
             {
             os<<numbersArg.array[i]<<", ";
             }
@@ -45,6 +44,8 @@ int main(){
     numbers.add(10);
     numbers.add(20);
     numbers.add(30);
+    numbers.add(40);
+    numbers.add(50);
     cout<<numbers<<endl; // 10,20,30
     int value=numbers[1];
     cout<<value<<endl; //20
