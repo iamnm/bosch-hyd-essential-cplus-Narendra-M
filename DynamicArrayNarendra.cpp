@@ -26,6 +26,12 @@ class DynamicArray{
           return this->array[index];
     }
      
+     
+    ~DynamicArray()
+    {
+       delete[] this->array; 
+    }
+    
 friend std::ostream& operator<<(std::ostream& os, const DynamicArray& numbersArg);
     
 };
