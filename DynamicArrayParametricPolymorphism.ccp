@@ -43,29 +43,29 @@ class DynamicArray {
     ItemType operator[](int indexArg) {
         return this->arr[indexArg]; // Return the element at the given index
     }
-    friend std::ostream& operator<<(std::ostream& os, const DynamicArray<ItemType>& operand2);
-};
-std::ostream& operator<<(std::ostream& os, const DynamicArray<ItemType>& printobj){
-    for(int i = 0; i < printobj.size; i++) {
-        os << printobj.arr[i] << " "; // Print each element
+    
+    friend std::ostream& operator<<(std::ostream& os, const DynamicArray<ItemType>& operand2){
+    for(int i = 0; i < operand2.size; i++) {
+        os << operand2.arr[i] << " "; // Print each element
     }
     return os;
-}
+    }
+    
+};
+
 // Main function
 int main() {
     DynamicArray<int> numbers(2); // Create a DynamicArray object with size 2
     numbers.add(10); // Add 10 to the array
     numbers.add(20); // Add 20 to the array
     numbers.add(30); // Add 30 to the array
-    // Access the element at index 1
-    int value = numbers[1];
     cout<<numbers<<endl;
 
-    DynamicArray<float> floatNumbers(2); // Create a DynamicArray object with size 2
+    DynamicArray<float> floatNumbers(1); 
     floatNumbers.add(10.10f); 
     floatNumbers.add(20.30f); 
     floatNumbers.add(30.50f); 
-  cout<<floatNumbers<<endl;
+    cout<<floatNumbers<<endl;
 
     return 0; // Return 0 to indicate successful execution
 }
