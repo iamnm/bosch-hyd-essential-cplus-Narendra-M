@@ -42,10 +42,14 @@ class Scanner:public Device{
 
 
 class PrintScanner{
+    private : 
+    Printer* PrinterObj;
+    Scanner* ScannerObj;
+    
     public:
     PrintScanner(string assetId,string model){
-        Printer PrinterObj("P1", "HP");
-        Scanner ScannerObj("S1", "HP");
+        PrinterObj= new Printer("P1", "HP");
+        ScannerObj= new Scanner ("S1", "HP");
         cout<<"PrintScanner Instantiated"<<endl;
     }
     
@@ -54,6 +58,8 @@ class PrintScanner{
     return "";
     }
     ~PrintScanner(){
+        delete PrinterObj;
+        delete ScannerObj;
         cout<<"Print Scanner Destructed"<<endl;
     }
 };
