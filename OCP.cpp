@@ -4,9 +4,20 @@ using namespace std;
 class Vehicle{
     protected:
     Vehicle(){}
+ public:
+    void start(){
+        this->start();
+    }
+   void drive(){
+       this->drive();
+    }
+    void stop(){
+        this->stop();
+    }
+
 };
 class Car:public Vehicle{
-    public: void start(){
+    public: void Start(){
         cout<<"Car Push Button Start"<<endl;
     }
      void drive(){
@@ -20,10 +31,10 @@ class Truck:public Vehicle{
     public: void start(){
         cout<<"Key Start"<<endl;
     }
-    void drive(){
+    void drive1(){
         cout<<"RWD Drive"<<endl;
     }
-    void stop(){
+    void stop1(){
         cout<<"Stop"<<endl;
     }
 };
@@ -44,7 +55,7 @@ class VehicleDrivingSimulator{
   void startSimulation(Vehicle* vehicleAddress){
       vehicleAddress->start();
       vehicleAddress->drive();
-      vehicleAddres->halt();
+      vehicleAddress->stop();
   }
  
  };
@@ -56,7 +67,7 @@ Bus busObj;
 VehicleDrivingSimulator simulator;
 
 simulator.startSimulation(&carObj); // "Car Push Button Start,FWD Drive , Stopped
-simulator.startSimulation(&truckObj)// "Key Start,RWD Drive , Stopped;
+simulator.startSimulation(&truckObj); // "Key Start,RWD Drive , Stopped;
 simulator.startSimulation(&busObj);// "Key Start,RWD Drive , Stopped;
 
 }
