@@ -17,18 +17,7 @@ class IScanner{
 };
 
 
-class PrintScanner : public IPrinter, public IScanner{
- 
-  public:
-   void print(string path){
-        cout<<"Printing ....."<<path<<endl;
-    }
-      void scan(string path){
-        cout<<"Scanning ....."<<path;
-   }
- 
-    
-};
+
 
 class Printer : public IPrinter{
 
@@ -46,6 +35,20 @@ class Scanner : public IScanner {
    }
 };
 
+class PrintScanner : public IPrinter, public IScanner{
+    Printer printerObj;
+    Scanner scannerObj;
+        
+  public:
+   void print(string path){
+        printerObj.print(path);
+    }
+      void scan(string path){
+        scannerObj.scan(path);
+   }
+ 
+    
+};
 
  class TaskManager :public PrintScanner{
     public:
