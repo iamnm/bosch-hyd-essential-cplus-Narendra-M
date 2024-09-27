@@ -1,23 +1,53 @@
-class Printer{
+// InterfaceAssignment 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class IPrinter{
+    public:
+    virtual ~IPrinter(){}
+     virtual void print(string path)=0;
+};
+
+class IScanner{
+    public:
+    virtual ~IScanner(){}
+     virtual void scan(string path)=0;
+};
+
+
+class PrintScanner : public IPrinter, public IScanner{
+ 
+  public:
+   void print(string path){
+        cout<<"Printing ....."<<path<<endl;
+    }
+      void scan(string path){
+        cout<<"Scanning ....."<<path;
+   }
+ 
+    
+};
+
+class Printer : public IPrinter{
 
     public:
      void print(string path){
-        cout<<"Printing ....."<<path;
+        cout<<"Printing ....."<<path<<endl;
     }
 };
 
-class Scanner{
+class Scanner : public IScanner {
 
     public:
      void scan(string path){
-        cout<<"Scanning ....."<<path;
-    }
+        cout<<"Scanning ....."<<path<<endl;
+   }
 };
 
-public class PrintScanner {
 
-};
-public  class TaskManager{
+ class TaskManager :public PrintScanner{
     public:
      static void execuctePrintTask(IPrinter *printer,string documentPath){
         printer->print(documentPath);
@@ -36,5 +66,6 @@ public  class TaskManager{
         TaskManager::execuctePrintTask(&printerObj,"Test.doc");
         TaskManager::execucteScanTask(&scannerObj,"MyImage.png");
         TaskManager::execuctePrintTask(&printScannerObj,"NewDoc.doc");
-        TaskManager::execucteScanTask(&printScannerObj,"YourImage.png");
-    }
+       TaskManager::execucteScanTask(&printScannerObj,"YourImage.png");
+
+}
